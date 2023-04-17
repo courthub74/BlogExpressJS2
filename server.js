@@ -14,6 +14,10 @@ app.set('view engine', 'ejs');
     // and where the route will be based on (/articles) or route extension
 app.use('/articles', articleRouter);
 
+// tell express how to access the article form in models
+    // so you can do the req.body.(thing)
+app.use(express.urlencoded({ extended: false }));
+
 // route at the index
 app.get('/', (req, res) => {
     const articles = [{
