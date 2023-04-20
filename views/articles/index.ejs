@@ -21,13 +21,22 @@
         <% articles.forEach(article => { %>
             <div class="card mt-4">
                 <div class="card-body">
+
+                    <!-- Article Title -->
                     <h4 class="card-title"><%= article.title %></h4>
+
+                    <!-- Date created -->
                     <div class="card-subtitle text-muted mb-2">
                         <%= article.createdAt.toLocaleDateString() %>
                     </div>
+
+                    <!-- Article Description -->
                     <div class="card-text mb-2">
                         <%= article.description %>
                     </div>
+
+                    <!-- Show the Article -->
+                    <a href="articles/<%= article.id %>" class="btn btn-primary">Read More</a>
                 </div>
             </div>
        <% })  %>
