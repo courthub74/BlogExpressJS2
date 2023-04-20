@@ -10,10 +10,6 @@ mongoose.connect('mongodb+srv://mongo:ws9aNiYfRZiPK2Zy@courdevscluster.rs7vdal.m
     // the view engine converts the ejs to HTML
 app.set('view engine', 'ejs');
 
-// Let's tell the app to use the article router
-    // and where the route will be based on (/articles) or route extension
-app.use('/articles', articleRouter);
-
 // tell express how to access the article form in models
     // so you can do the req.body.(thing)
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +23,10 @@ app.get('/', (req, res) => {
     }];
     res.render('articles/index', { articles: articles });
 });
+
+// Let's tell the app to use the article router
+    // and where the route will be based on (/articles) or route extension
+app.use('/articles', articleRouter);
 
 // THE MOST BASIC WAY
 // app.get('/', (req, res) => {

@@ -1,19 +1,19 @@
 <!-- TITLE -->
 <div class="form-group">
     <label for="title">Title</label>
-    <input required type="text" name="title" id="title" class="form-control">
+    <input required value="<% article.title %>" type="text" name="title" id="title" class="form-control">
 </div>
 
 <!-- DESCRIPTION -->
 <div class="form-group">
     <label for="title">Description</label>
-    <textarea required type="text" name="title" id="title" class="form-control"></textarea>
+    <textarea required type="text" name="title" id="title" class="form-control"><% article.description %></textarea>
 </div>
 
 <!-- MARKDOWN -->
 <div class="form-group">
     <label for="title">Markdown</label>
-    <textarea required type="text" name="title" id="title" class="form-control"></textarea>
+    <textarea type="text" name="title" id="title" class="form-control"><% article.markdown %></textarea>
 </div>
 <br>
 <a href="/" class="btn btn-secondary">Cancel</a>
