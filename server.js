@@ -17,7 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // route at the index
 app.get('/', async (req, res) => {
-    const articles = await Article.find()
+    const articles = await Article.find().sort({
+        createdAt: 'desc'
+    });
     res.render('articles/index', { articles: articles });
 });
 
