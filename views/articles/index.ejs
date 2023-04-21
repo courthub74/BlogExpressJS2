@@ -36,7 +36,13 @@
                     </div>
 
                     <!-- Show the Article -->
-                    <a href="articles/<%= article.id %>" class="btn btn-primary">Read More</a>
+                    <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
+
+                    <!-- Delete Button -->
+                    <form action="/articles/<% article.id %>?_method=DELETE" 
+                        method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
             </div>
        <% })  %>

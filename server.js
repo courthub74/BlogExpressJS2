@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Article = require('./models/article');
 const articleRouter = require('./routes/articles');
+const methodOverride =require('method-override');
 const app = express();
 
 // connect mongo db
@@ -13,7 +14,10 @@ app.set('view engine', 'ejs');
 
 // tell express how to access the article form in models
     // so you can do the req.body.(thing)
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
+
+// use the method override to allow Delete method
+app.use(methodOverride('_method'));
 
 // route at the index
 app.get('/', async (req, res) => {
